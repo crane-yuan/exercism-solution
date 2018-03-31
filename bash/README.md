@@ -1,5 +1,6 @@
 ## Home
 - http://exercism.io/languages/bash/exercises
+- https://github.com/exercism/bash/tree/master/exercises
 
 ## Resources
 - http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html
