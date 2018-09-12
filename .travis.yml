@@ -10,13 +10,9 @@ jdk:
 notifications:      # 邮箱通知
   email: false
 
-addons:
-  sonarcloud:
-    organization: "crane-yuan-github" 
-
 script:
-    # - cd ./java && ./gradlew test && ./gradlew jacocoTestReport
  - cd ./java && ./gradlew sonarqube -Dsonar.projectKey=EtfjfzeZA -Dsonar.organization=crane-yuan-github -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=$SONAR_TOKEN
+ - cd ./java && ./gradlew jacocoTestReport
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
