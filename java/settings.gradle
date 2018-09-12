@@ -1,4 +1,4 @@
-rootProject.name = 'java'
+rootProject.name = 'exercism-java'
 include 'hello-world', 'two-fer', 'armstrong-numbers', 'rna-transcription', 'pangram', 'space-age', 'acronym', 'raindrops', 'isogram', 'pig-latin',
         'anagram', 'reverse-string', 'protein-translation', 'proverb', 'twelve-days', 'diamond', 'bob', 'house', 'food-chain', 'beer-song', 'hamming',
         'gigasecond', 'scrabble-score', 'difference-of-squares', 'secret-handshake', 'perfect-numbers', 'matrix', 'kindergarten-garden', 'sum-of-multiples',
