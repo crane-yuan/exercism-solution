@@ -1,4 +1,6 @@
 language: java
+sudo: false  # faster builds
+
 install: true
 
 jdk:
@@ -8,7 +10,10 @@ notifications:      # 邮箱通知
   email: false
 
 script:
- - cd ./java && ./gradlew test
+ - cd ./java && ./gradlew test && ./gradlew jacocoTestReport
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
