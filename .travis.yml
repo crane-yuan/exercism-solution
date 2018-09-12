@@ -4,8 +4,11 @@ install: true
 jdk:
   - oraclejdk8
 
+notifications:      # 邮箱通知
+  email: false
+
 script:
-  - ./gradlew build --scan -s
+ - cd ./java && ./gradlew test
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
