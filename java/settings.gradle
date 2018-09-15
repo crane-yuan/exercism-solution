@@ -5,4 +5,4 @@ include 'hello-world', 'two-fer', 'armstrong-numbers', 'rna-transcription', 'pan
         'saddle-points', 'nth-prime', 'flatten-array', 'prime-factors', 'pascals-triangle', 'spiral-matrix', 'transpose', 'queen-attack', 'binary-search',
         'all-your-base', 'rectangles', 'variable-length-quantity', 'isbn-verifier', 'rotational-cipher', 'circular-buffer', 'error-handling', 'word-count',
         'sieve', 'luhn', 'triangle', 'allergies', 'robot-simulator', 'largest-series-product', 'robot-name', 'nucleotide-count', 'collatz-conjecture',
-        'phone-number'
+        'phone-number', 'bank-account'
