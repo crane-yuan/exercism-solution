@@ -6,7 +6,6 @@ public class BaseConverter {
 
     private int base;
     private int[] value;
-    private static final int DECIMAL = 10;
 
     public BaseConverter(int base, int[] value) {
         if (base < 2) {
@@ -45,7 +44,7 @@ public class BaseConverter {
         int result = 0;
         for (int i = 0; i < size; i++) {
             if (value[i] != 0) {
-                result += value[i] * Math.pow(base, size - i - 1);
+                result += value[i] * Math.pow(base, size - i - 1f);
             }
         }
 
