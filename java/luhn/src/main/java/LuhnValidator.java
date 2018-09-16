@@ -10,11 +10,6 @@ class LuhnValidator {
             return result;
         }
 
-        /*
-        if (!candidate.matches("^[\\d]+$")) {
-            return result;
-        }
-        */
         if (!candidate.chars()
                       .allMatch(Character::isDigit)) {
             return result;

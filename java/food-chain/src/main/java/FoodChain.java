@@ -1,9 +1,6 @@
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * @author craneyuan
- */
 public class FoodChain {
 
     private static final String PHRASE_01 = "I don't know why she swallowed the fly. Perhaps she'll die.\n";

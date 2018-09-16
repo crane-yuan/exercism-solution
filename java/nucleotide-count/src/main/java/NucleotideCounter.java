@@ -7,15 +7,14 @@ import java.util.stream.Collectors;
 
 public class NucleotideCounter {
 
-    static final List<Character> DNA_SOURCE = Arrays.asList('A', 'C', 'G', 'T');
+    private static final List<Character> DNA_SOURCE = Arrays.asList('A', 'C', 'G', 'T');
 
-    private String dna;
     private List<Character> dnaList;
 
-    NucleotideCounter(String dna) {
-        List<Character> dnaList = dna.chars()
-                                     .mapToObj(i -> (char) i)
-                                     .collect(Collectors.toList());
+    public NucleotideCounter(String dna) {
+        dnaList = dna.chars()
+                     .mapToObj(i -> (char) i)
+                     .collect(Collectors.toList());
         dnaList.stream()
                .distinct()
                .forEach(key -> {
@@ -23,11 +22,9 @@ public class NucleotideCounter {
                        throw new IllegalArgumentException();
                    }
                });
-        this.dna = dna;
-        this.dnaList = dnaList;
     }
 
-    Map<Character, Integer> nucleotideCounts() {
+    public Map<Character, Integer> nucleotideCounts() {
         Map<Character, Integer> result = new HashMap<>();
 
         Map<Character, Long> counted = dnaList.stream()

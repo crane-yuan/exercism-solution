@@ -3,12 +3,10 @@ import java.util.List;
 
 public class Allergies {
 
-    private int score;
-    private List<Allergen> allergies;
+    private List<Allergen> allergenList;
 
     public Allergies(int score) {
-        this.score = score;
-        this.allergies = new ArrayList<>();
+        this.allergenList = new ArrayList<>();
 
         char[] binary = Integer.toBinaryString(score)
                                .toCharArray();
@@ -18,17 +16,17 @@ public class Allergies {
 
         for (int i = size - 1; i >= 0 && (size - i <= 8); i--) {
             if (binary[i] == '1') {
-                allergies.add(allergens[size - i - 1]);
+                allergenList.add(allergens[size - i - 1]);
             }
         }
     }
 
     public boolean isAllergicTo(Allergen peanuts) {
-        return allergies.contains(peanuts);
+        return allergenList.contains(peanuts);
     }
 
     public List<Allergen> getList() {
-        return allergies;
+        return allergenList;
     }
 
 }

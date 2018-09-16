@@ -4,17 +4,17 @@ import java.util.List;
 
 class Matrix {
 
-    private String matrix;
+    private String matrixAsString;
     private List<int[]> rowList = new ArrayList<>();
     private List<int[]> columnList = new ArrayList<>();
 
     Matrix(String matrixAsString) {
-        this.matrix = matrixAsString;
+        this.matrixAsString = matrixAsString;
     }
 
     int[] getRow(int rowNumber) {
         if (this.rowList.isEmpty()) {
-            String[] line = matrix.split("\n");
+            String[] line = matrixAsString.split("\n");
             for (String str : line) {
                 int[] row = Arrays.stream(str.split(" "))
                                   .mapToInt(Integer::parseInt)

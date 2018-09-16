@@ -34,8 +34,7 @@ public class BankAccount {
         this.balance -= money;
     }
 
-    public void close() throws BankAccountActionInvalidException {
-//        assertOpened();
+    public void close() {
         this.isOpen = false;
     }
 

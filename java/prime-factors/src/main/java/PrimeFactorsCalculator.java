@@ -12,7 +12,7 @@ public class PrimeFactorsCalculator {
         }
         List<BigInteger> list = primeDecomp(BigInteger.valueOf(number));
         List<Long> result = null;
-        if (list != null) {
+        if (!list.isEmpty()) {
             result = list.stream()
                          .map(BigInteger::longValue)
                          .collect(Collectors.toList());
@@ -27,11 +27,11 @@ public class PrimeFactorsCalculator {
     private static final BigInteger THREE = BigInteger.valueOf(3);
     private static final BigInteger FIVE = BigInteger.valueOf(5);
 
-    private ArrayList<BigInteger> primeDecomp(BigInteger n) {
+    private List<BigInteger> primeDecomp(BigInteger n) {
         if (n.compareTo(TWO) < 0) {
-            return null;
+            return Collections.emptyList();
         }
-        ArrayList<BigInteger> factors = new ArrayList<BigInteger>();
+        ArrayList<BigInteger> factors = new ArrayList<>();
 
         // handle even values
         while (n.and(BigInteger.ONE)
@@ -58,16 +58,16 @@ public class PrimeFactorsCalculator {
         // multiples of three and multiples of five. This increment array
         // helps us to accomplish that
         int[] pattern = {4, 2, 4, 2, 4, 6, 2, 6};
-        int pattern_index = 0;
-        BigInteger current_test = BigInteger.valueOf(7);
+        int patternIndex = 0;
+        BigInteger currentTest = BigInteger.valueOf(7);
         while (!n.equals(BigInteger.ONE)) {
-            while (n.mod(current_test)
+            while (n.mod(currentTest)
                     .equals(BigInteger.ZERO)) {
-                factors.add(current_test);
-                n = n.divide(current_test);
+                factors.add(currentTest);
+                n = n.divide(currentTest);
             }
-            current_test = current_test.add(BigInteger.valueOf(pattern[pattern_index]));
-            pattern_index = (pattern_index + 1) & 7;
+            currentTest = currentTest.add(BigInteger.valueOf(pattern[patternIndex]));
+            patternIndex = (patternIndex + 1) & 7;
         }
 
         return factors;
