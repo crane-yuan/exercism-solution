@@ -7,7 +7,7 @@ class ArmstrongNumbers {
         double sum = 0;
 
         for (int i = 0; i < array.length; i++) {
-            sum += Math.pow(array[i] - '0', array.length);
+            sum += Math.pow(array[i] - (double) '0', array.length);
         }
 
         return numberToCheck == sum ? true : false;

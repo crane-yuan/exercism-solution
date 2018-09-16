@@ -2,6 +2,8 @@ import org.junit.Test;
 import org.junit.Ignore;
 import org.junit.Before;
 
+import java.security.NoSuchAlgorithmException;
+
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
@@ -13,7 +15,7 @@ public class RobotTest {
     private Robot robot;
 
     @Before
-    public void setUp() {
+    public void setUp() throws NoSuchAlgorithmException {
       robot = new Robot();
     }
 
@@ -24,7 +26,7 @@ public class RobotTest {
 
     //@Ignore("Remove to run test")
     @Test
-    public void differentRobotsHaveDifferentNames() {
+    public void differentRobotsHaveDifferentNames() throws NoSuchAlgorithmException {
         assertThat(robot.getName(), not(equalTo(new Robot().getName())));
     }
 

@@ -45,10 +45,10 @@ class ErrorHandling {
     Optional<Integer> handleErrorByReturningOptionalInstance(String integer) {
         Optional<Integer> result = Optional.empty();
         try {
-            result = Optional.of(Integer.valueOf(integer));
-        } finally {
-            return result;
+            result = Optional.ofNullable(Integer.valueOf(integer));
+        } catch (Exception e) {
         }
+        return result;
     }
 
 }

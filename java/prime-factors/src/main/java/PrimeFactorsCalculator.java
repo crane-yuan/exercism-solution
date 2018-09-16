@@ -10,9 +10,13 @@ public class PrimeFactorsCalculator {
         if (number < 2) {
             return Collections.emptyList();
         }
-        List<Long> result = primeDecomp(BigInteger.valueOf(number)).stream()
-                                                                   .map(BigInteger::longValue)
-                                                                   .collect(Collectors.toList());
+        List<BigInteger> list = primeDecomp(BigInteger.valueOf(number));
+        List<Long> result = null;
+        if (list != null) {
+            result = list.stream()
+                         .map(BigInteger::longValue)
+                         .collect(Collectors.toList());
+        }
         return result;
     }
 
@@ -23,7 +27,7 @@ public class PrimeFactorsCalculator {
     private static final BigInteger THREE = BigInteger.valueOf(3);
     private static final BigInteger FIVE = BigInteger.valueOf(5);
 
-    public static ArrayList<BigInteger> primeDecomp(BigInteger n) {
+    private ArrayList<BigInteger> primeDecomp(BigInteger n) {
         if (n.compareTo(TWO) < 0) {
             return null;
         }

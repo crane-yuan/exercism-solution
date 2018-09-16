@@ -22,7 +22,7 @@ class HandshakeCalculator {
         List<Signal> result = new ArrayList<>();
         for (int i = binary.length - 1; i >= 0; i--) {
             if (binary[i] == '1') {
-                int size = (int) Math.pow(10, binary.length - i - 1);
+                int size = (int) Math.pow(10f, binary.length - 1f - i);
                 Signal signal = map.get(size);
                 if (signal != null) {
                     result.add(signal);
