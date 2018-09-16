@@ -13,32 +13,21 @@ class Triangle {
         }
     }
 
-    boolean isEquilateral() {
-        if (side1 == side2 && side2 == side3) {
-            return true;
-        }
-        return false;
+    public boolean isEquilateral() {
+        return side1 == side2 && side2 == side3;
     }
 
-    boolean isIsosceles() {
-        if (side1 == side2 || side1 == side3 || side2 == side3) {
-            return true;
-        }
-        return false;
+    public boolean isIsosceles() {
+        return side1 == side2 || side1 == side3 || side2 == side3;
     }
 
-    boolean isScalene() {
+    public boolean isScalene() {
         return !isIsosceles();
     }
 
     private boolean isTriangle(double side1, double side2, double side3) {
-        if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
-            return false;
-        }
-        if ((side1 + side2 >= side3) && (side1 + side3 >= side2) && (side2 + side3 >= side1)) {
-            return true;
-        }
-        return false;
+        return !(side1 <= 0 || side2 <= 0 || side3 <= 0) && ((side1 + side2 >= side3) && (side1 + side3 >= side2) && (side2 + side3
+                >= side1));
     }
 
 }

@@ -1,6 +1,6 @@
 class ArmstrongNumbers {
 
-    boolean isArmstrongNumber(int numberToCheck) {
+    public boolean isArmstrongNumber(int numberToCheck) {
         char[] array = String.valueOf(numberToCheck)
                              .toCharArray();
 
@@ -10,7 +10,7 @@ class ArmstrongNumbers {
             sum += Math.pow(array[i] - (double) '0', array.length);
         }
 
-        return numberToCheck == sum ? true : false;
+        return numberToCheck == sum;
     }
 
 }

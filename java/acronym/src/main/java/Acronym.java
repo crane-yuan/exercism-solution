@@ -17,7 +17,7 @@ class Acronym {
         list.stream()
             .map(s -> s.substring(0, 1))
             .map(String::toUpperCase)
-            .forEach(s -> sb.append(s));
+            .forEach(sb::append);
         return sb.toString();
     }
 

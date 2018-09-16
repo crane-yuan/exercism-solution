@@ -4,7 +4,6 @@ import java.util.List;
 public class Anagram {
 
     private String word;
-    private boolean empty = true;
 
     public Anagram(String word) {
         this.word = word.toLowerCase();
@@ -15,15 +14,10 @@ public class Anagram {
 
         for (String tempWord : phrase) {
             if (isAnagram(this.word, tempWord)) {
-                this.empty = false;
                 result.add(tempWord);
             }
         }
         return result;
-    }
-
-    public boolean isEmpty() {
-        return this.empty;
     }
 
     private static boolean isAnagram(String s1, String s2) {
@@ -37,23 +31,23 @@ public class Anagram {
 
         int[] nums = new int[26];
 
-        char[] s1_char = s1.toCharArray();
-        char[] s2_char = s2.toCharArray();
+        char[] s1Char = s1.toCharArray();
+        char[] s2Char = s2.toCharArray();
 
-        int s1_length = s1_char.length;
-        int s2_length = s2_char.length;
+        int s1Length = s1Char.length;
+        int s2Length = s2Char.length;
 
-        if (s1_length != s2_length) {
+        if (s1Length != s2Length) {
             return false;
         }
 
-        for (int i = 0; i < s1_length; i++) {
-            int index = s1_char[i] - 'a';
+        for (int i = 0; i < s1Length; i++) {
+            int index = s1Char[i] - 'a';
             nums[index]++;
         }
 
-        for (int i = 0; i < s1_length; i++) {
-            int index = s2_char[i] - 'a';
+        for (int i = 0; i < s1Length; i++) {
+            int index = s2Char[i] - 'a';
             nums[index]--;
         }
 

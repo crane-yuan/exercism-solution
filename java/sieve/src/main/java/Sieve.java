@@ -5,18 +5,18 @@ class Sieve {
 
     private int maxPrime;
 
-    Sieve(int maxPrime) {
+    public Sieve(int maxPrime) {
         this.maxPrime = maxPrime;
     }
 
-    List<Integer> getPrimes() {
+    public List<Integer> getPrimes() {
         List<Integer> result = new ArrayList<>();
         boolean[] array = new boolean[maxPrime + 1];
 
         int size = (int) Math.pow(maxPrime, 0.5);
 
         for (int i = 2; i <= size; i++) {
-            if (array[i] == false) {
+            if (!array[i]) {
                 int num = (int) Math.pow(i, 2);
                 for (int j = num; j <= maxPrime; j += i) {
                     array[j] = true;
@@ -25,7 +25,7 @@ class Sieve {
         }
 
         for (int i = 2; i <= maxPrime; i++) {
-            if (array[i] == false) {
+            if (!array[i]) {
                 result.add(i);
             }
         }

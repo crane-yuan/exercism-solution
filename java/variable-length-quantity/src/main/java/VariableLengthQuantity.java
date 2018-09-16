@@ -24,7 +24,7 @@ class VariableLengthQuantity {
             throw new IllegalArgumentException("Invalid variable-length quantity encoding");
         }
 
-        List<String> result = new ArrayList<String>();
+        List<String> result = new ArrayList<>();
         int beginIndex = 0;
         for (int i = 0; i < bytes.size(); i++) {
             if (bytes.get(i) < 1 << 7) {

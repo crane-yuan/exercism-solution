@@ -7,11 +7,9 @@ public class PigLatinTranslator {
     public String translate(String phrase) {
         List<String> list = Arrays.asList(phrase.split("[\\s]+"));
 
-        String result = list.stream()
-                            .map(this::translateForWord)
-                            .collect(Collectors.joining(" "));
-
-        return result;
+        return list.stream()
+                   .map(this::translateForWord)
+                   .collect(Collectors.joining(" "));
     }
 
     private String translateForWord(String word) {
@@ -32,18 +30,18 @@ public class PigLatinTranslator {
         if (vowel.contains(capital.toLowerCase()) || word.startsWith(xr) || word.startsWith(yt)) {
             return word + ay;
         } else {
-            int y_index = word.indexOf(y);
-            if (y_index == 1 || y_index == 2) {
-                return word.substring(y_index, size) + word.substring(0, y_index) + ay;
+            int yIndex = word.indexOf(y);
+            if (yIndex == 1 || yIndex == 2) {
+                return word.substring(yIndex, size) + word.substring(0, yIndex) + ay;
 
             }
 
-            int qu_index = word.indexOf(qu);
-            if (qu_index != -1) {
-                if (qu_index == 0) {
-                    return word.substring(qu_index + 2, size) + qu + ay;
+            int quIndex = word.indexOf(qu);
+            if (quIndex != -1) {
+                if (quIndex == 0) {
+                    return word.substring(quIndex + 2, size) + qu + ay;
                 }
-                return word.substring(qu_index + 2, size) + capital + qu + ay;
+                return word.substring(quIndex + 2, size) + capital + qu + ay;
             }
 
             if (word.startsWith(ch)) {
