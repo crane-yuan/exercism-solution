@@ -6,7 +6,8 @@ import java.util.Map;
 class ProteinTranslator {
 
     private static final Map<String, String> map = new HashMap<>();
-    private static final String stop = "UAA, UAG, UGA";
+    private static final String STOP_POINT = "UAA, UAG, UGA";
+    public static final String SERINE = "Serine";
 
     static {
         map.put("AUG", "Methionine");
@@ -14,10 +15,10 @@ class ProteinTranslator {
         map.put("UUC", "Phenylalanine");
         map.put("UUA", "Leucine");
         map.put("UUG", "Leucine");
-        map.put("UCU", "Serine");
-        map.put("UCC", "Serine");
-        map.put("UCA", "Serine");
-        map.put("UCG", "Serine");
+        map.put("UCU", SERINE);
+        map.put("UCC", SERINE);
+        map.put("UCA", SERINE);
+        map.put("UCG", SERINE);
         map.put("UAU", "Tyrosine");
         map.put("UAC", "Tyrosine");
         map.put("UGU", "Cysteine");
@@ -25,14 +26,14 @@ class ProteinTranslator {
         map.put("UGG", "Tryptophan");
     }
 
-    List<String> translate(String rnaSequence) {
+    public List<String> translate(String rnaSequence) {
 
         List<String> rnaList = getParts(rnaSequence, 3);
 
         List<String> result = new ArrayList<>();
 
         for (String rna : rnaList) {
-            if (stop.contains(rna)) {
+            if (STOP_POINT.contains(rna)) {
                 return result;
             }
             String temp = map.get(rna);
@@ -43,7 +44,7 @@ class ProteinTranslator {
         return result;
     }
 
-    private static List<String> getParts(String string, int partitionSize) {
+    private List<String> getParts(String string, int partitionSize) {
         List<String> parts = new ArrayList<>();
         int len = string.length();
         for (int i = 0; i < len; i += partitionSize) {

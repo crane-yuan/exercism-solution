@@ -80,6 +80,8 @@ public class Robot {
                 case 'A':
                     advance();
                     break;
+                default:
+                    throw new IllegalArgumentException("Wrong instructions.");
             }
         }
     }

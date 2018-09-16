@@ -6,21 +6,21 @@ class KindergartenGarden {
     private String garden;
     private List<char[]> plantList = new ArrayList<>();
     private static final List<String[]> STUDENT_LIST = new ArrayList<>();
-    private static final String _students = "Alice,Bob,Charlie,David\n" + "Eve,Fred,Ginny,Harriet\n" + "Ileana,Joseph,Kincaid,Larry";
+    private static final String STUDENTS_MATRIX = "Alice,Bob,Charlie,David\n" + "Eve,Fred,Ginny,Harriet\n" + "Ileana,Joseph,Kincaid,Larry";
 
     static {
-        String[] lines = _students.split("\n");
+        String[] lines = STUDENTS_MATRIX.split("\n");
         for (String line : lines) {
             STUDENT_LIST.add(line.split(","));
         }
     }
 
-    KindergartenGarden(String garden) {
+    public KindergartenGarden(String garden) {
         this.garden = garden;
 
     }
 
-    List<Plant> getPlantsOfStudent(String student) {
+    public List<Plant> getPlantsOfStudent(String student) {
         List<Plant> result = new ArrayList<>();
         if (plantList.isEmpty()) {
             String[] lines = garden.split("\n");

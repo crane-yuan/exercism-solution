@@ -17,6 +17,8 @@ class RnaTranscription {
                 case 'A':
                     array[i] = 'U';
                     break;
+                default:
+                    throw new IllegalArgumentException("Error letter.");
             }
         }
         return String.valueOf(array);

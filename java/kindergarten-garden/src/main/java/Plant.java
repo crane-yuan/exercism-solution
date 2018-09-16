@@ -14,8 +14,8 @@ enum Plant {
                 return RADISHES;
             case 'V':
                 return VIOLETS;
+            default:
+                return null;
         }
-
-        return null;
     }
 }

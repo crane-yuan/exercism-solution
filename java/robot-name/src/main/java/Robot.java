@@ -8,6 +8,7 @@ public class Robot {
     private Random random = SecureRandom.getInstanceStrong();
 
     public Robot() throws NoSuchAlgorithmException {
+        // throw NoSuchAlgorithmException if no algorithm is available
     }
 
     public String getName() {
