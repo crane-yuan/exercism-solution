@@ -1,10 +1,13 @@
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class Robot {
 
     private String name;
+    private Set<String> history = new HashSet<>();
     private Random random = SecureRandom.getInstanceStrong();
 
     public Robot() throws NoSuchAlgorithmException {
@@ -13,7 +16,9 @@ public class Robot {
 
     public String getName() {
         if (this.name == null) {
-            this.name = generateRobotName();
+            do {
+                this.name = generateRobotName();
+            } while (!history.add(this.name));
         }
         return this.name;
     }
