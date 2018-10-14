@@ -1,13 +1,10 @@
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.Ignore;
 
-import java.lang.Integer;
-import java.lang.String;
 import java.util.HashMap;
 import java.util.Map;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class WordCountTest {
 

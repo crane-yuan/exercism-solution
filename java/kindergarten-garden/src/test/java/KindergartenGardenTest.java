@@ -1,8 +1,7 @@
-import java.util.List;
-import java.util.Arrays;
-
 import org.junit.Test;
-import org.junit.Ignore;
+
+import java.util.Arrays;
+import java.util.List;
 
 import static org.junit.Assert.assertEquals;
 
