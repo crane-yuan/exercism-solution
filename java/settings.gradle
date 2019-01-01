@@ -6,4 +6,4 @@ include 'hello-world', 'two-fer', 'armstrong-numbers', 'rna-transcription', 'pan
         'all-your-base', 'rectangles', 'variable-length-quantity', 'isbn-verifier', 'rotational-cipher', 'circular-buffer', 'error-handling', 'word-count',
         'sieve', 'luhn', 'triangle', 'allergies', 'robot-simulator', 'largest-series-product', 'robot-name', 'nucleotide-count', 'collatz-conjecture',
         'phone-number', 'bank-account', 'meetup', 'clock', 'yacht', 'series', 'bracket-push', 'run-length-encoding', 'atbash-cipher', 'linked-list', 'darts',
-        'etl', 'grade-school', 'roman-numerals', 'affine-cipher', 'simple-linked-list', 'sublist'
+        'etl', 'grade-school', 'roman-numerals', 'affine-cipher', 'simple-linked-list', 'sublist', 'markdown'
