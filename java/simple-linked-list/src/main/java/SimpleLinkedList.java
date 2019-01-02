@@ -2,11 +2,11 @@ import java.util.NoSuchElementException;
 
 public class SimpleLinkedList<T> {
 
-    transient int size = 0;
+    int size = 0;
 
-    transient Node<T> first;
+    Node<T> first;
 
-    transient Node<T> last;
+    Node<T> last;
 
     public SimpleLinkedList() {
     }
@@ -51,7 +51,7 @@ public class SimpleLinkedList<T> {
         Object[] result = new Object[size];
         int i = 0;
         for (Node<T> x = first; x != null; x = x.next) {
-            result[i++] = x.item;
+            result[i++] = clazz.cast(x.item);
         }
         return result;
     }
@@ -69,7 +69,6 @@ public class SimpleLinkedList<T> {
     }
 
     private T unlinkFirst(Node<T> f) {
-        // assert f == first && f != null;
         T element = f.item;
         Node<T> next = f.next;
         f.item = null;

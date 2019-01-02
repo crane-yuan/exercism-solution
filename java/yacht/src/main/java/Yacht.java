@@ -35,12 +35,14 @@ class Yacht {
                               .sum() == 20 ? 30 : 0;
                 break;
             case FULL_HOUSE:
-                score = (kinds(this.dice, 4) > 0 || kinds(this.dice, 5) > 0) ?
-                        0 :
-                        arrayToSet(this.dice).size() != 2 ?
-                                0 :
-                                Arrays.stream(this.dice)
-                                      .sum();
+                if ((kinds(this.dice, 4) > 0 || kinds(this.dice, 5) > 0)) {
+                    score = 0;
+                } else if (arrayToSet(this.dice).size() != 2) {
+                    score = 0;
+                } else {
+                    score = Arrays.stream(this.dice)
+                                  .sum();
+                }
                 break;
             case FOUR_OF_A_KIND:
                 int num = kinds(this.dice, 4);

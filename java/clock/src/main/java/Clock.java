@@ -26,7 +26,9 @@ public class Clock {
 
     @Override
     public boolean equals(Object obj) {
-        assert obj != null;
+        if (obj == null || this.getClass() != obj.getClass()) {
+            return false;
+        }
         return time.equals(((Clock) obj).time);
     }
 

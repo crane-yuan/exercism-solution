@@ -3,7 +3,7 @@ public class DoublyLinkedList<T> {
     Node<T> tail;
 
     void push(T value) {
-        Node<T> node = new Node<T>(value, tail, null);
+        Node<T> node = new Node<>(value, tail, null);
         if (tail == null) {
             head = node;
         } else {
@@ -37,7 +37,7 @@ public class DoublyLinkedList<T> {
     }
 
     void unshift(T value) {
-        Node<T> node = new Node<T>(value, null, head);
+        Node<T> node = new Node<>(value, null, head);
         if (head == null) {
             tail = node;
         } else {

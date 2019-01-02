@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Atbash {
@@ -47,7 +48,7 @@ public class Atbash {
 
     private static List<String> splitByNumber(String value, int size) {
         if (value == null || size <= 0) {
-            return null;
+            return Collections.emptyList();
         }
         List<String> words = new ArrayList<>();
 
