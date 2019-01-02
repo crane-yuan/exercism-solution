@@ -1,10 +1,22 @@
 import java.math.BigInteger;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Random;
 
 /**
  * https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
  */
 public class DiffieHellman {
+
+    private Random rand;
+
+    public DiffieHellman() {
+        try {
+            rand = SecureRandom.getInstanceStrong(); // SecureRandom is preferred to Random
+        } catch (NoSuchAlgorithmException e) {
+            // No processing
+        }
+    }
 
     public BigInteger privateKey(BigInteger prime) {
         return BigInteger.valueOf(getRandomNumberInRange(1, prime.intValue()));
@@ -20,11 +32,10 @@ public class DiffieHellman {
                         .mod(primeP);
     }
 
-    private static int getRandomNumberInRange(int min, int max) {
-        Random r = new Random();
-        return r.ints(min + 1, max)
-                .findFirst()
-                .getAsInt();
+    private int getRandomNumberInRange(int min, int max) {
+        return rand.ints(min + 1, max)
+                   .findFirst()
+                   .getAsInt();
     }
 
 }

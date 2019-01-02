@@ -1,9 +1,9 @@
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.Map;
 import java.util.Set;
-import java.util.Stack;
 
 public class BracketChecker {
 
@@ -14,13 +14,13 @@ public class BracketChecker {
     }
 
     public boolean areBracketsMatchedAndNestedCorrectly() {
-        Stack<String> stack = new Stack<>();
+        LinkedList<String> stack = new LinkedList<>();
+
         Set<String> leftBracketSet = new HashSet<>(Arrays.asList("(", "[", "{"));
-        Map<String, String> bracketMap = new HashMap<String, String>() {{
-            put(")", "(");
-            put("]", "[");
-            put("}", "{");
-        }};
+        Map<String, String> bracketMap = new HashMap<>();
+        bracketMap.put(")", "(");
+        bracketMap.put("]", "[");
+        bracketMap.put("}", "{");
 
         String[] array = this.originalStr.split("");
         for (String str : array) {
