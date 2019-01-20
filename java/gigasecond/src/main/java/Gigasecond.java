@@ -1,8 +1,5 @@
-import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.util.TimeZone;
 
 class Gigasecond {
 
@@ -17,13 +14,9 @@ class Gigasecond {
     }
 
     public LocalDateTime getDate() {
-        long gigasecond = (long) Math.pow(10, 9);
-        long second = this.dateTime.atZone(ZoneId.systemDefault())
-                                   .toEpochSecond();
-        long sum = gigasecond + second;
-
-        return LocalDateTime.ofInstant(Instant.ofEpochSecond(sum), TimeZone.getDefault()
-                                                                           .toZoneId());
+        long gigasecond = 1_000_000_000L;
+        
+        return dateTime.plusSeconds(gigasecond);
     }
 
 }
