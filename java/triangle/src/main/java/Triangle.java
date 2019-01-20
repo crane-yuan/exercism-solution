@@ -1,33 +1,65 @@
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 class Triangle {
+    private final double side1;
+    private final double side2;
+    private final double side3;
 
-    private double side1;
-    private double side2;
-    private double side3;
-
-    public Triangle(double side1, double side2, double side3) throws TriangleException {
+    Triangle(double side1, double side2, double side3) throws TriangleException {
         this.side1 = side1;
         this.side2 = side2;
         this.side3 = side3;
-        if (!isTriangle(side1, side2, side3)) {
+        if (!isTriangle()) {
             throw new TriangleException();
         }
     }
 
-    public boolean isEquilateral() {
-        return side1 == side2 && side2 == side3;
+    boolean isEquilateral() {
+        return allSidesAreEqual();
     }
 
-    public boolean isIsosceles() {
-        return side1 == side2 || side1 == side3 || side2 == side3;
+    boolean isIsosceles() {
+        return twoSidesAreEqual();
     }
 
-    public boolean isScalene() {
-        return !isIsosceles();
+    boolean isScalene() {
+        return noSidesAreEqual();
     }
 
-    private boolean isTriangle(double side1, double side2, double side3) {
-        return !(side1 <= 0 || side2 <= 0 || side3 <= 0) && ((side1 + side2 >= side3) && (side1 + side3 >= side2) && (side2 + side3
-                >= side1));
+    private boolean isTriangle() {
+        return respectsInequality() && hasNoNullSides();
     }
 
+    private Stream<Double> sides() {
+        return Stream.of(side1, side2, side3);
+    }
+
+    private boolean hasNoNullSides() {
+        return sides().noneMatch(x -> x <= 0.0);
+    }
+
+    private boolean respectsInequality() {
+        List<Double> sortedSides = sides().sorted()
+                                          .collect(Collectors.toList());
+        return sortedSides.get(0) + sortedSides.get(1) >= sortedSides.get(2);
+    }
+
+    private int uniqueSideValues() {
+        return sides().collect(Collectors.toSet())
+                      .size();
+    }
+
+    private boolean allSidesAreEqual() {
+        return uniqueSideValues() == 1;
+    }
+
+    private boolean twoSidesAreEqual() {
+        return uniqueSideValues() <= 2;
+    }
+
+    private boolean noSidesAreEqual() {
+        return uniqueSideValues() == 3;
+    }
 }
