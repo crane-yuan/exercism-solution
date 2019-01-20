@@ -3,30 +3,23 @@ import java.util.List;
 
 public class Allergies {
 
-    private List<Allergen> allergenList;
+    private int score;
 
-    public Allergies(int score) {
-        this.allergenList = new ArrayList<>();
-
-        char[] binary = Integer.toBinaryString(score)
-                               .toCharArray();
-
-        Allergen[] allergens = Allergen.values();
-        int size = binary.length;
-
-        for (int i = size - 1; i >= 0 && (size - i <= 8); i--) {
-            if (binary[i] == '1') {
-                allergenList.add(allergens[size - i - 1]);
-            }
-        }
+    Allergies(int score) {
+        this.score = score;
     }
 
-    public boolean isAllergicTo(Allergen peanuts) {
-        return allergenList.contains(peanuts);
+    public boolean isAllergicTo(Allergen thing) {
+        return (score & thing.getScore()) == thing.getScore();
     }
 
     public List<Allergen> getList() {
-        return allergenList;
+        List<Allergen> listOfAllergens = new ArrayList<>();
+        for (Allergen allergen : Allergen.values()) {
+            if (isAllergicTo(allergen)) {
+                listOfAllergens.add(allergen);
+            }
+        }
+        return listOfAllergens;
     }
-
 }
