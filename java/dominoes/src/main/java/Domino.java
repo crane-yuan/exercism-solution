@@ -18,6 +18,12 @@ class Domino {
     
     @Override
     public boolean equals(Object o) {
+        if (o == null) {
+            return false;
+        }
+        if (this.getClass() != o.getClass()) {
+            return false;
+        }
     	Domino otherDomino = (Domino) o;
     	return (this.getLeft() == otherDomino.getLeft() && this.getRight() == otherDomino.getRight()) ||
     			(this.getLeft() == otherDomino.getRight() && this.getRight() == otherDomino.getLeft());
