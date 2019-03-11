@@ -8,4 +8,4 @@ include 'hello-world', 'two-fer', 'armstrong-numbers', 'rna-transcription', 'pan
         'phone-number', 'bank-account', 'meetup', 'clock', 'yacht', 'series', 'bracket-push', 'run-length-encoding', 'atbash-cipher', 'linked-list', 'darts',
         'etl', 'grade-school', 'roman-numerals', 'affine-cipher', 'simple-linked-list', 'sublist', 'markdown', 'diffie-hellman', 'word-search',
         'crypto-square', 'dnd-character', 'dominoes', 'binary-search-tree', 'tournament', 'parallel-letter-frequency', 'wordy', 'rail-fence-cipher',
-        'alphametics', 'list-ops', 'resistor-color', 'custom-set', 'rational-numbers', 'palindrome-products', 'book-store'
+        'alphametics', 'list-ops', 'resistor-color', 'custom-set', 'rational-numbers', 'palindrome-products', 'book-store', 'go-counting'
