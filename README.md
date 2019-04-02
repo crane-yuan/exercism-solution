@@ -5,5 +5,5 @@
 This is a solution for [exercism](http://exercism.io/).
 
 ## View by Gitpod(Online IDE)
-[exercism-solution for Gitpod](https://gitpod.io/#https://github.com/crane-yuan/exercism-solution)
+[exercism-solution for Gitpod](https://gitpod.io/#https://github.com/craneyuan/exercism-solution)
 
