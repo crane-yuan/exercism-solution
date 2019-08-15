@@ -7,3 +7,6 @@ This is a solution for [exercism](http://exercism.io/).
 ## View by Gitpod(Online IDE)
 [exercism-solution for Gitpod](https://gitpod.io/#https://github.com/craneyuan/exercism-solution)
 
+## CHANGELOG
+- Add action to test code for per push
+
