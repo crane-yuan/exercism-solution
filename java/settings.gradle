@@ -10,4 +10,4 @@ include 'hello-world', 'two-fer', 'armstrong-numbers', 'rna-transcription', 'pan
         'crypto-square', 'dnd-character', 'dominoes', 'binary-search-tree', 'tournament', 'parallel-letter-frequency', 'wordy', 'rail-fence-cipher',
         'alphametics', 'list-ops', 'resistor-color', 'custom-set', 'rational-numbers', 'palindrome-products', 'book-store', 'go-counting', 'bowling',
         'minesweeper', 'ocr-numbers', 'tree-building', 'poker', 'zebra-puzzle', 'zipper', 'simple-cipher', 'complex-numbers', 'leap', 'resistor-color-duo',
-        'grains', 'knapsack', 'change', 'pythagorean-triplet', 'forth', 'two-bucket', 'grep'
+        'grains', 'knapsack', 'change', 'pythagorean-triplet', 'forth', 'two-bucket', 'grep', 'micro-blog'
