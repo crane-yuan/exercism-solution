@@ -1,11 +1,13 @@
-# Gigasecond
+# High Scores
 
-Given a moment, determine the moment that would be after a gigasecond
-has passed.
+Manage a game player's High Score list.
 
-A gigasecond is 10^9 (1,000,000,000) seconds.
+Your task is to build a high-score component of the classic Frogger game, one of the highest selling and addictive games of all time, and a classic of the arcade era. Your task is to write methods that return the highest score from the list, the last added score and the three highest scores.
 
-If you're unsure what operations you can perform on `DateTime<Utc>` take a look at the [chrono crate](https://docs.rs/chrono) which is listed as a dependency in the `Cargo.toml` file for this exercise.
+## Hints
+
+Consider retaining a reference to `scores` in the struct - copying is not
+necessary. You will require some lifetime annotations, though.
 
 
 ## Rust Installation
@@ -83,7 +85,7 @@ If you want to know more about Exercism, take a look at the [contribution guide]
 
 ## Source
 
-Chapter 9 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=09](http://pine.fm/LearnToProgram/?Chapter=09)
+Tribute to the eighties' arcade game Frogger
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

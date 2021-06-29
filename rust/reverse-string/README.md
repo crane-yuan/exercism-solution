@@ -1,11 +1,25 @@
-# Gigasecond
+# Reverse String
 
-Given a moment, determine the moment that would be after a gigasecond
-has passed.
+Reverse a string
 
-A gigasecond is 10^9 (1,000,000,000) seconds.
+For example:
+input: "cool"
+output: "looc"
 
-If you're unsure what operations you can perform on `DateTime<Utc>` take a look at the [chrono crate](https://docs.rs/chrono) which is listed as a dependency in the `Cargo.toml` file for this exercise.
+## Bonus
+Test your function on this string: `uüu` and see what happens. Try to write a function that properly
+reverses this string. Hint: grapheme clusters
+
+To get the bonus test to run, remove the ignore flag (`#[ignore]`) from the
+last test, and execute the tests with:
+
+```bash
+$ cargo test --features grapheme
+```
+
+You will need to use external libraries (a `crate` in rust lingo) for the bonus task. A good place to look for those is [crates.io](https://crates.io/), the official repository of crates.
+
+[Check the documentation](https://doc.rust-lang.org/cargo/guide/dependencies.html) for instructions on how to use external crates in your projects.
 
 
 ## Rust Installation
@@ -83,7 +97,7 @@ If you want to know more about Exercism, take a look at the [contribution guide]
 
 ## Source
 
-Chapter 9 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=09](http://pine.fm/LearnToProgram/?Chapter=09)
+Introductory challenge to reverse an input string [https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb](https://medium.freecodecamp.org/how-to-reverse-a-string-in-javascript-in-3-different-ways-75e4763c68cb)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

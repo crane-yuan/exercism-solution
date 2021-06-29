@@ -1,12 +1,12 @@
-# Gigasecond
+# Sum Of Multiples
 
-Given a moment, determine the moment that would be after a gigasecond
-has passed.
+Given a number, find the sum of all the unique multiples of particular numbers up to
+but not including that number.
 
-A gigasecond is 10^9 (1,000,000,000) seconds.
+If we list all the natural numbers below 20 that are multiples of 3 or 5,
+we get 3, 5, 6, 9, 10, 12, 15, and 18.
 
-If you're unsure what operations you can perform on `DateTime<Utc>` take a look at the [chrono crate](https://docs.rs/chrono) which is listed as a dependency in the `Cargo.toml` file for this exercise.
-
+The sum of these multiples is 78.
 
 ## Rust Installation
 
@@ -83,7 +83,7 @@ If you want to know more about Exercism, take a look at the [contribution guide]
 
 ## Source
 
-Chapter 9 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=09](http://pine.fm/LearnToProgram/?Chapter=09)
+A variation on Problem 1 at Project Euler [http://projecteuler.net/problem=1](http://projecteuler.net/problem=1)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

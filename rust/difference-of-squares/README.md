@@ -1,12 +1,20 @@
-# Gigasecond
+# Difference Of Squares
 
-Given a moment, determine the moment that would be after a gigasecond
-has passed.
+Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.
 
-A gigasecond is 10^9 (1,000,000,000) seconds.
+The square of the sum of the first ten natural numbers is
+(1 + 2 + ... + 10)² = 55² = 3025.
 
-If you're unsure what operations you can perform on `DateTime<Utc>` take a look at the [chrono crate](https://docs.rs/chrono) which is listed as a dependency in the `Cargo.toml` file for this exercise.
+The sum of the squares of the first ten natural numbers is
+1² + 2² + ... + 10² = 385.
 
+Hence the difference between the square of the sum of the first
+ten natural numbers and the sum of the squares of the first ten
+natural numbers is 3025 - 385 = 2640.
+
+You are not expected to discover an efficient solution to this yourself from
+first principles; research is allowed, indeed, encouraged. Finding the best
+algorithm for the problem is a key skill in software engineering.
 
 ## Rust Installation
 
@@ -83,7 +91,7 @@ If you want to know more about Exercism, take a look at the [contribution guide]
 
 ## Source
 
-Chapter 9 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=09](http://pine.fm/LearnToProgram/?Chapter=09)
+Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

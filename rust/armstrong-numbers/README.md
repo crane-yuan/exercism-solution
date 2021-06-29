@@ -1,12 +1,15 @@
-# Gigasecond
+# Armstrong Numbers
 
-Given a moment, determine the moment that would be after a gigasecond
-has passed.
+An [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) is a number that is the sum of its own digits each raised to the power of the number of digits.
 
-A gigasecond is 10^9 (1,000,000,000) seconds.
+For example:
 
-If you're unsure what operations you can perform on `DateTime<Utc>` take a look at the [chrono crate](https://docs.rs/chrono) which is listed as a dependency in the `Cargo.toml` file for this exercise.
+- 9 is an Armstrong number, because `9 = 9^1 = 9`
+- 10 is *not* an Armstrong number, because `10 != 1^2 + 0^2 = 1`
+- 153 is an Armstrong number, because: `153 = 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153`
+- 154 is *not* an Armstrong number, because: `154 != 1^3 + 5^3 + 4^3 = 1 + 125 + 64 = 190`
 
+Write some code to determine whether a number is an Armstrong number.
 
 ## Rust Installation
 
@@ -83,7 +86,7 @@ If you want to know more about Exercism, take a look at the [contribution guide]
 
 ## Source
 
-Chapter 9 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=09](http://pine.fm/LearnToProgram/?Chapter=09)
+Wikipedia [https://en.wikipedia.org/wiki/Narcissistic_number](https://en.wikipedia.org/wiki/Narcissistic_number)
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
