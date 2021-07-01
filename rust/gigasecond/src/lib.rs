@@ -1,5 +1,3 @@
-extern crate chrono;
-
 use chrono::{DateTime, Duration, Utc};
 
 const ONE_BILLION_SECONDS: i64 = 1_000_000_000;
